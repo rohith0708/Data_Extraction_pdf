@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Document</title>
+    <style>
+                /* styles for table */
+        table{
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td,th{
+            
+            border:2px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+
+        }
+        table.center{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Extracted Data</h1>
+
+    <!-- Extracted invoice and payment is passed as context -->
+      <p>{{invoice}}</p> 
+      <p>{{payment}}</p>
+
+      <!-- table for showing the extracted table which is passed as context -->
+    <table class="center">
+        <thead>
+            <tr>
+                {% for header, value in data.0.items %}
+                    <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    {% for header, value in row.items %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

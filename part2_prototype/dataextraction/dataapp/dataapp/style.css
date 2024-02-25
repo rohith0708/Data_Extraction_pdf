@@ -1,0 +1,25 @@
+body{
+    text-align: center;
+}
+form{
+box-shadow: 10px 10px lightblue;
+position:absolute;
+left:30%;
+right:25%;
+text-align: center;
+width:30%;
+padding:30px;
+background-color: aquamarine;
+border-radius: 5px;
+}
+input[type='submit']{
+color:white;
+cursor: pointer;
+padding: 10px;
+background-color: black;
+border-radius: 10px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+input[type='submit']:hover{
+background-color:red;
+}
